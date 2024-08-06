@@ -8,7 +8,6 @@ import { AppointmentForm } from "@/components/forms/AppointmentForm";
 
 const NewAppointment = async ({ params: { userId } }: SearchParamProps) => {
   const patient = await getPatient(userId);
-
     // used for tracking the number of users that viewed a page.
     Sentry.metrics.set("user_view_new_appointment", patient.name);
 

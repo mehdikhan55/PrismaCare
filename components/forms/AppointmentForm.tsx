@@ -64,7 +64,7 @@ export const AppointmentForm = ({
     values: z.infer<typeof AppointmentFormValidation>
   ) => {
     setIsLoading(true);
-
+    console.log('type',type);
     let status;
     switch (type) {
       case "schedule":
@@ -88,17 +88,19 @@ export const AppointmentForm = ({
           status: status as Status,
           note: values.note,
         };
-
+     
         const newAppointment = await createAppointment(appointmentData);
-
+    
         if (newAppointment) {
           form.reset();
+          setIsLoading(false);
           router.push(
             `/patients/${userId}/new-appointment/success?appointmentId=${newAppointment.$id}`
           );
         }
-
+      }
         else {
+          
           const appointmentToUpdate = {
             userId,
             appointmentId: appointment?.$id!,
@@ -110,16 +112,17 @@ export const AppointmentForm = ({
             },
             type,
           };
-
+          console.log('appointmentToUpdate',appointmentToUpdate);
           const updatedAppointment = await updateAppointment(appointmentToUpdate);
 
           if (updatedAppointment) {
+            setIsLoading(false);
             setOpen && setOpen(false);
             form.reset();
           }
         }
-      }
-    } catch (error) {
+        
+      }catch (error) {
       console.log(error);
     }
     setIsLoading(false);

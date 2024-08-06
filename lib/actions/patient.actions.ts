@@ -50,6 +50,7 @@ export const registerPatient = async ({
     identificationDocument,
     ...patient
   }: RegisterUserParams) => {
+    console.log('register patient')
     try {
       // Upload file ->  // https://appwrite.io/docs/references/cloud/client-web/storage#createFile
       let file;
@@ -62,6 +63,7 @@ export const registerPatient = async ({
           );
   
         file = await storage.createFile(BUCKET_ID!, ID.unique(), inputFile);
+        console.log('file added')
       }
 
     // Create new patient document -> https://appwrite.io/docs/references/cloud/server-nodejs/databases#createDocument

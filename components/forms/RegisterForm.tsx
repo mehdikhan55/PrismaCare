@@ -27,6 +27,7 @@ import { FileUploader } from "../FileUploader";
 import SubmitButton from "../SubmitButton";
 import { User } from "@/types";
 import { FormFieldType } from "./PatientForm";
+import { consoleIntegration } from "@sentry/nextjs";
 
 const RegisterForm = ({ user }: { user: User }) => {
   const router = useRouter();
@@ -88,8 +89,8 @@ const RegisterForm = ({ user }: { user: User }) => {
       };
 
       // @ts-ignore
-      const newPatient = await registerPatient(parent);
-
+      const newPatient = await registerPatient(patient);
+      console.log('Patient added', newPatient)
       if (newPatient) {
         router.push(`/patients/${user.$id}/new-appointment`);
       }
