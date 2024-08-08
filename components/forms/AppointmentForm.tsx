@@ -93,7 +93,6 @@ export const AppointmentForm = ({
     
         if (newAppointment) {
           form.reset();
-          setIsLoading(false);
           router.push(
             `/patients/${userId}/new-appointment/success?appointmentId=${newAppointment.$id}`
           );
@@ -112,11 +111,10 @@ export const AppointmentForm = ({
             },
             type,
           };
-          console.log('appointmentToUpdate',appointmentToUpdate);
+  
           const updatedAppointment = await updateAppointment(appointmentToUpdate);
 
           if (updatedAppointment) {
-            setIsLoading(false);
             setOpen && setOpen(false);
             form.reset();
           }
