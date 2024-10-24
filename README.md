@@ -14,6 +14,19 @@
     </div>
 </div>
 
+
+### 🌍 Supporting UN Sustainable Development Goals (SDGs)
+
+- **SDG 3: Good Health and Well-being**  
+  Contributing to improved healthcare accessibility and patient care management, ensuring healthy lives for all ages.
+
+- **SDG 9: Industry, Innovation, and Infrastructure**  
+  Leveraging modern technology to enhance healthcare delivery and streamline operations, fostering innovation in the health sector.
+
+- **SDG 11: Sustainable Cities and Communities**  
+  Strengthening healthcare systems in urban and rural areas, promoting resilient and inclusive community health infrastructure.
+
+
 ## 📋 <a name="table">Table of Contents</a>
 
 1. 🎙️ [Introduction](#introduction)
